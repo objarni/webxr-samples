@@ -173,7 +173,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             // hand (as opposed to their head or the screen) use it to render
             // a ray coming out of the input device to indicate the pointer
             // direction.
-            scene.inputRenderer.addLaserPointer(targetRayPose.transform);
+            //scene.inputRenderer.addLaserPointer(targetRayPose.transform);
           }
 
           // If we have a pointer matrix we can also use it to render a cursor
@@ -182,7 +182,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           // Statically render the cursor 2 meters down the ray since we're
           // not calculating any intersections in this sample.
           let targetRay = new Ray(targetRayPose.transform);
-          let cursorDistance = 2.0;
+          let cursorDistance = 5.0;
           let cursorPos = vec3.fromValues(
               targetRay.origin.x,
               targetRay.origin.y,
@@ -198,7 +198,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           scene.inputRenderer.addCursor(cursorPos);
 
           let cursorPos2 = vec3.fromValues(
-              cursorPos.x - 1,
+              cursorPos.x - 10,
               cursorPos.y,
               cursorPos.z
               );
