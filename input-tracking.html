@@ -198,9 +198,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           scene.inputRenderer.addCursor(cursorPos);
 
           let cursorPos2 = vec3.fromValues(
-              targetRay.origin.x-10,
-              targetRay.origin.y,
-              targetRay.origin.z
+              cursorPos.x - 1,
+              cursorPos.y,
+              cursorPos.z
               );
           scene.inputRenderer.addCursor(cursorPos2);
           
