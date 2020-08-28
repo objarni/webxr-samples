@@ -177,24 +177,19 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             scene.inputRenderer.addLaserPointer(targetRayPose.transform);
           }
 
-          // If we have a pointer matrix we can also use it to render a cursor
-          // for both handheld and gaze-based input sources.
-
-          // Statically render the cursor 2 meters down the ray since we're
-          // not calculating any intersections in this sample.
           let targetRay = new Ray(targetRayPose.transform);
-          let cursorDistance = 10.0;
+          let cursorDistance = 2.0;
           let cursorPos = vec3.fromValues(
               targetRay.origin.x,
               targetRay.origin.y,
               targetRay.origin.z
               );
-          vec3.add(cursorPos, cursorPos, [
-              targetRay.direction.x * cursorDistance - 10,
-              targetRay.direction.y * cursorDistance,
-              targetRay.direction.z * cursorDistance,
-              ]);
-          // vec3.transformMat4(cursorPos, cursorPos, inputPose.targetRay.transformMatrix);
+          // vec3.add(cursorPos, cursorPos, [
+          //     targetRay.direction.x * cursorDistance,
+          //     targetRay.direction.y * cursorDistance,
+          //     targetRay.direction.z * cursorDistance,
+          //     ]);
+          // // vec3.transformMat4(cursorPos, cursorPos, inputPose.targetRay.transformMatrix);
 
           scene.inputRenderer.addCursor(cursorPos);
 
