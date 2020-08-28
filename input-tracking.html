@@ -36,9 +36,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       <details open>
         <summary>Input Tracking</summary>
         <p>
-          This sample demonstrates basic tracking and rendering of
-          XRInputSources. It does not respond to button presses or other
-          controller interactions.
+          INPUT TRACKING
           <a class="back" href="./">Back</a>
         </p>
       </details>
@@ -198,6 +196,13 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           // vec3.transformMat4(cursorPos, cursorPos, inputPose.targetRay.transformMatrix);
 
           scene.inputRenderer.addCursor(cursorPos);
+
+          let cursorPos2 = vec3.fromValues(
+              targetRay.origin.x-10,
+              targetRay.origin.y,
+              targetRay.origin.z
+              );
+          scene.inputRenderer.addCursor(cursorPos2);
           
           if (inputSource.gripSpace) {
             let gripPose = frame.getPose(inputSource.gripSpace, refSpace);
